@@ -1,0 +1,103 @@
+@import "bootstrap";
+$color-primary: #ee4974;
+$color-secondary: #fffbfc;
+$color-tertiary: #ffeef4;
+
+@mixin setDimension($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+.form-control,
+.form-check-input {
+  border-color: $color-primary;
+}
+
+.form-check-input:checked {
+  background-color: $color-primary;
+  border-color: $color-primary;
+}
+
+.form-control:focus,
+.form-check-input:focus {
+  border-color: $color-primary;
+  box-shadow: 0 0 20px #fd0d56;
+}
+
+body {
+  background-color: $color-tertiary;
+}
+
+.wrapper {
+  background-color: $color-secondary;
+  margin-top: 5%;
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: 0 0 20px #e6a0b8;
+}
+
+.todo-head {
+  background-color: $color-primary;
+
+  h3 {
+    font-family: "Sofia", sans-serif;
+  }
+}
+
+.todo-footer {
+  background-color: $color-primary;
+  height: 50px;
+
+  .add-button {
+    border: 10px solid $color-secondary;
+    background-color: $color-primary;
+    color: $color-secondary;
+    font-size: 40px;
+    @include setDimension(80px, 80px);
+    padding: 0;
+    top: -80%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &:focus {
+      border-color: unset;
+    }
+  }
+}
+
+.todo-list {
+  overflow-y: auto;
+  height: 100px;
+}
+.todo-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f7b8ce;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.todo-checkbox {
+  margin-top: 0;
+  margin-right: 20px;
+  @include setDimension(30px, 30px);
+}
+
+.todo-text {
+  margin-bottom: 0;
+  margin-right: 10px;
+  flex: 1;
+}
+
+.todo-delete {
+  @include setDimension(30px, 30px);
+  padding: 0;
+  font-size: 20px;
+  color: $color-primary;
+
+  &:focus {
+    color: $color-primary;
+  }
+}
